@@ -7,7 +7,7 @@ pipeline{
                 bat 'docker build -t mywebapp .'
             }
         }
-        stage(docker login){
+        stage('docker login'){
             steps{
                 echo 'Logging in to Docker Hub...'
                 bat 'docker login -u saradasrinija -p @Srinadh63@'
