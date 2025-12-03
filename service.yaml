@@ -1,4 +1,4 @@
-appVersion: t1
+apiVersion: t1
 kind: Service
 metadata:
   name: mywebapp-service
