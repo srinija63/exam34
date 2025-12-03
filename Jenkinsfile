@@ -27,7 +27,8 @@ pipeline{
                 bat 'kubectl apply -f service.yaml'
             }
         }
-        post{
+    }
+    post{
             success{
                 echo 'Deployment successful!'
             }
@@ -35,5 +36,4 @@ pipeline{
                 echo 'Deployment failed.'
             }
         }
-    }
 }
