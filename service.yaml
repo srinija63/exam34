@@ -1,0 +1,13 @@
+appVersion: t1
+kind: Service
+metadata:
+  name: mywebapp-service
+spec:
+  selector:
+    app: mywebapp
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      NodePort: 30080
+  type: NodePort
