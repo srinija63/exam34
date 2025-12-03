@@ -1,4 +1,4 @@
-appVersion: app/v1
+appVersion: apps/v1
 kind: Deployment
 metadata:
   name: mywebapp-deployment
@@ -14,6 +14,6 @@ spec:
   spec:
     containers:
     - name: mywebapp
-      image: mywebapp:latest
+      image: saradasrinija/sample:latest
       ports:
       - containerPort: 5000
