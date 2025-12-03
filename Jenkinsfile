@@ -3,26 +3,26 @@ pipeline{
     stages{
         stage('Build image'){
             steps{
-                echo 'Building Docker image...'
+                echo 'Building Docker image'
                 bat 'docker build -t mywebapp .'
             }
         }
         stage('docker login'){
             steps{
-                echo 'Logging in to Docker Hub...'
+                echo 'Logging in to Docker Hub'
                 bat 'docker login -u saradasrinija -p @Srinadh63@'
             }
         }
         stage('Push image to docker hub'){
             steps{
-                echo 'Pushing Docker image to Docker Hub...'
+                echo 'Pushing Docker image to Docker Hub'
                 bat 'docker tag mywebapp saradasrinija/sample:latest'
                 bat 'docker push saradasrinija/sample:latest'
             }
         }
         stage('Deploy to kubernetes'){
             steps{
-                echo 'Deploying to Kubernetes...'
+                echo 'Deploying to Kubernetes'
                 bat 'kubectl apply -f deployment.yaml --validate=false'
                 bat 'kubectl apply -f service.yaml'
             }
